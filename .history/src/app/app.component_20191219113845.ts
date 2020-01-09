@@ -17,19 +17,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'About Us',
-      url: '/about',
-      icon: 'information-circle'
-    },
-    {
-      title: 'Contact Us',
-      url: '/contact',
-      icon: 'contact'
-    },
-    {
-      title: 'Menu',
-      url: '/menu',
-      icon: 'list-box'
+      title: 'List',
+      url: '/list',
+      icon: 'list'
     }
   ];
 
