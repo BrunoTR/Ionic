@@ -51,25 +51,24 @@
     <h4>{{ promotionErrMsg }}</h4>
   </div>
 
-  <ion-card class="welcome-card" *ngIf="leader">
-    <img src="{{baseURL + leader.image}}"/>
+  <ion-card class="welcome-card" *ngIf="dish">
+    <img src="{{baseURL + dish.image}}"/>
     <ion-card-header>
-      <ion-card-subtitle>{{ leader.designation }}</ion-card-subtitle>
-      <ion-card-title>{{leader.name | uppercase}}</ion-card-title>
+      <ion-card-title>{{dish.name | uppercase}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>{{leader.description}}</p>
+      <p>{{dish.description}}</p>
     </ion-card-content>
   </ion-card>
 
-  <div [hidden]="leader || leaderErrMsg">
+  <div [hidden]="dish || dishErrMsg">
     <ion-spinner></ion-spinner>
     <h4>Loading... Please wait</h4>
   </div>
 
-  <div *ngIf="leaderErrMsg">
+  <div *ngIf="dishErrMsg">
     <h2>Error</h2>
-    <h4>{{ leaderErrMsg }}</h4>
+    <h4>{{ dishErrMsg }}</h4>
   </div>
 
 </ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Ristorante Con Fusion
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="welcome-card" *ngIf="dish">
+    <img src="{{baseURL + dish.image}}"/>
+    <ion-card-header>
+      <ion-card-title>{{dish.name | uppercase}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{dish.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div [hidden]="dish || dishErrMsg">
+    <ion-spinner></ion-spinner>
+    <h4>Loading... Please wait</h4>
+  </div>
+
+  <div *ngIf="dishErrMsg">
+    <h2>Error</h2>
+    <h4>{{ dishErrMsg }}</h4>
+  </div>
+  
+</ion-content>

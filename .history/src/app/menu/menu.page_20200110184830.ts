@@ -12,6 +12,7 @@ export class MenuPage implements OnInit {
   constructor(private dishService: DishService) { }
 
   ngOnInit() {
+    this.dishService.logging();
     this.dishService.getDishes()
       .subscribe((dishes: Dish[]) => console.log(dishes));
   }

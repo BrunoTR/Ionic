@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DishService } from '../services/dish.service';
-import { Dish } from 'src/shared/dish';
 
 @Component({
   selector: 'app-menu',
@@ -12,8 +11,9 @@ export class MenuPage implements OnInit {
   constructor(private dishService: DishService) { }
 
   ngOnInit() {
-    this.dishService.getDishes()
-      .subscribe((dishes: Dish[]) => console.log(dishes));
+    console.log("menu");
+    this.dishService.logging();
+    this.dishService.getDishes();
   }
 
 }
